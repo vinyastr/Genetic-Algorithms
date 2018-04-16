@@ -156,25 +156,29 @@ public class Population {
         return child;
     }
     
-//    public void mutation(){
-//        //sorting based on the fitnessFunction
-//        sortPopulation();
-//        for(int i=0;i<gtList.size();i++){
-//            List<Genotype> newMutation = new ArrayList<Genotype>();
-//            if(i<gtList.size()/2){
-//            String[] mutatedRepresentation = new String[gtList.get(i).getRepresentation().length];
-//            Genotype gt = gtList.get(i);
-//            Random r = new Random();
-//            int randomFirstIndex = getRandomGenotypeIndex(gtList.get(i).getRepresentation().length/2, r);
-//            int randomSecondIndex = getRandomGenotypeIndex(gtList.get(i).getRepresentation().length, r);
-//            
-//            String temp =gt.getRepresentation()[randomFirstIndex];
-//            gt.getRepresentation()[randomFirstIndex]=gt.getRepresentation()[randomSecondIndex];
-//            gt.getRepresentation()[randomSecondIndex]=temp;
-//            newMutation.add(gt);
-//            }
-//        }
-//    }
+    public void mutation(){
+        //sorting based on the fitnessFunction
+        sortPopulation();
+        for(int i=0;i<gtList.size();i++){
+            List<Genotype> newMutation = new ArrayList<Genotype>();
+            if(i<gtList.size()/2){
+            String[] mutatedRepresentation = new String[gtList.get(i).getRepresentation().length];
+            Genotype gt = gtList.get(i);
+            Random r = new Random();
+            int randomFirstIndex = getRandomGenotypeIndex(gtList.get(i).getRepresentation().length/2, r);
+            int randomSecondIndex = getRandomGenotypeIndex(gtList.get(i).getRepresentation().length, r);
+            
+            String temp =gt.getRepresentation()[randomFirstIndex];
+            gt.getRepresentation()[randomFirstIndex]=gt.getRepresentation()[randomSecondIndex];
+            gt.getRepresentation()[randomSecondIndex]=temp;
+            gt.generatePhenotype(gt, baseOrder);
+            newMutation.add(gt);
+            }
+            else if(i>gtList.size()/2){
+                newMutation.add(gtList.get(i));
+            }
+        }
+    }
 
     private int getRandomGenotypeIndex(int upperbound, Random r) {
 
