@@ -4,7 +4,7 @@ To develop the genetic algorithm for solving the Travelling Salesman Problem, we
 Genotype mainly focus on defining the DNA and how the DNA was translated to real point of locations and the Crossover/ Mutate process. The Population class consists of methods to initialize the population, keeps list of genotypes and base order in which the initial list of cities is generated. TraversalPath contains methods to generate phenotype and methods to calculate fitness score and the distance. Driver class runs the main method to generate the population maintain generations and also contains a method which creates random cities for base order.
 
 ## IMPLEMENTATION
-Considering the Population Class it contains five major methods: Constructor, initializePopulation, sortPopulation, regeneration and crossover. It also contains some other supplement methods like genoTypeComparator and getRandomGenotypeIndex.
+• Considering the Population Class it contains five major methods: Constructor, initializePopulation, sortPopulation, regeneration and crossover. It also contains some other supplement methods like genoTypeComparator and getRandomGenotypeIndex.
 • InitializePopulation method is used to initialize the initial population randomly. It creates Genotypes which has a 4-bit string representation of binary number of each city.
 • SortPopulation method is used to sort the population based on the fitness score generated for each phenotype.
 • Regeneration method is used to generate new population or generation using crossover method by choosing random parents from the population. The population is maintained constant in the process.
