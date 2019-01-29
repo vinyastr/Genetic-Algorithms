@@ -1,4 +1,4 @@
-# INFO6205_525
+# INFO6205_525 - SOLVING TRAVELLING SALESMAN PROBLEM USING GENETIC ALGORITHM
 ## ABSTRACT
 To develop the genetic algorithm for solving the Travelling Salesman Problem, we implemented 5 Classes: Genotype, TraversalPath, Population, City and Driver class.
 Genotype mainly focus on defining the DNA and how the DNA was translated to real point of locations and the Crossover/ Mutate process. The Population class consists of methods to initialize the population, keeps list of genotypes and base order in which the initial list of cities is generated. TraversalPath contains methods to generate phenotype and methods to calculate fitness score and the distance. Driver class runs the main method to generate the population maintain generations and also contains a method which creates random cities for base order.
